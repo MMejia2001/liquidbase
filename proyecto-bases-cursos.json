@@ -1,0 +1,1854 @@
+{ "databaseChangeLog": [
+  {
+    "changeSet": {
+      "id": "1724902434969-1",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_5"
+                  },
+                  "name": "ID_ADMINISTRADOR",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_PERSONA",
+                  "type": "INT"
+                }
+              }
+            ]
+            ,
+            "tableName": "ADMINISTRADORES"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-2",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "autoIncrement": true,
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_8D"
+                  },
+                  "name": "ID_ASIGNACION",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_CURSO",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_TIPO",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "TITULO",
+                  "type": "VARCHAR(100)"
+                }
+              },
+              {
+                "column": {
+                  "name": "DESCRIPCION",
+                  "type": "VARCHAR(100)"
+                }
+              },
+              {
+                "column": {
+                  "name": "ARCHIVO",
+                  "type": "VARCHAR(100)"
+                }
+              }
+            ]
+            ,
+            "tableName": "ASIGNACIONES"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-3",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_7"
+                  },
+                  "name": "ID_ASISTENCIA",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false
+                  },
+                  "name": "ID_CURSO",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false
+                  },
+                  "name": "ID_ESTUDIANTE",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false
+                  },
+                  "name": "FECHA",
+                  "type": "date"
+                }
+              },
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false
+                  },
+                  "name": "ESTADO",
+                  "type": "TINYINT"
+                }
+              }
+            ]
+            ,
+            "tableName": "ASISTENCIA"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-4",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "autoIncrement": true,
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_3"
+                  },
+                  "name": "ID_AULA",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "NOMBRE",
+                  "type": "VARCHAR(50)"
+                }
+              },
+              {
+                "column": {
+                  "name": "CAPACIDAD",
+                  "type": "INT"
+                }
+              }
+            ]
+            ,
+            "tableName": "AULAS"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-5",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_A"
+                  },
+                  "name": "ID_CITASALON",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_CITA",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_AULA",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_CURSO",
+                  "type": "INT"
+                }
+              }
+            ]
+            ,
+            "tableName": "CITAPORSALON"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-6",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_3D"
+                  },
+                  "name": "ID_CITA",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "DÍA",
+                  "type": "date"
+                }
+              },
+              {
+                "column": {
+                  "name": "HORA_INICIO",
+                  "type": "time"
+                }
+              },
+              {
+                "column": {
+                  "name": "HORA_FIN",
+                  "type": "time"
+                }
+              }
+            ]
+            ,
+            "tableName": "CITAS"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-7",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "autoIncrement": true,
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_77"
+                  },
+                  "name": "ID_CURSO",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false
+                  },
+                  "name": "NOMBRE",
+                  "type": "VARCHAR(50)"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_INSTRUCTOR",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "DESCRIPCION",
+                  "type": "VARCHAR(50)"
+                }
+              },
+              {
+                "column": {
+                  "name": "ESTADO",
+                  "type": "VARCHAR(50)"
+                }
+              }
+            ]
+            ,
+            "tableName": "CURSOS"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-8",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "autoIncrement": true,
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_89"
+                  },
+                  "name": "ID_ENTREGA",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_ASIGNACION",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_ESTUDIANTE",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "CALIFICACION",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ESTADO",
+                  "type": "VARCHAR(50)"
+                }
+              },
+              {
+                "column": {
+                  "name": "RETROALIMENTACION",
+                  "type": "VARCHAR(255)"
+                }
+              }
+            ]
+            ,
+            "tableName": "ENTREGASASIGNACION"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-9",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_8"
+                  },
+                  "name": "ID_ESTUDIANTE",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_PERSONA",
+                  "type": "INT"
+                }
+              }
+            ]
+            ,
+            "tableName": "ESTUDIANTE"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-10",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "autoIncrement": true,
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_3F"
+                  },
+                  "name": "ID_FORO",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "TEMA",
+                  "type": "VARCHAR(50)"
+                }
+              },
+              {
+                "column": {
+                  "name": "DESCRIPCION",
+                  "type": "VARCHAR(1000000000)"
+                }
+              },
+              {
+                "column": {
+                  "name": "FECHA_CREACION",
+                  "type": "date"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_CURSO",
+                  "type": "INT"
+                }
+              }
+            ]
+            ,
+            "tableName": "FOROS"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-11",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_4"
+                  },
+                  "name": "ID_HACADEMICO",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_ESTUDIANTE",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "PROMEDIO_GRAL",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "RASISTENCIA",
+                  "type": "VARCHAR(1000000000)"
+                }
+              },
+              {
+                "column": {
+                  "name": "RETROALIMENTACION",
+                  "type": "VARCHAR(1000000000)"
+                }
+              }
+            ]
+            ,
+            "tableName": "HISTORIALACADEMICO"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-12",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_B"
+                  },
+                  "name": "ID_INSTRUCTOR",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_PERSONA",
+                  "type": "INT"
+                }
+              }
+            ]
+            ,
+            "tableName": "INSTRUCTORES"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-13",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "autoIncrement": true,
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_778"
+                  },
+                  "name": "ID_MATERIAL",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_CURSO",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false
+                  },
+                  "name": "NOMBRE",
+                  "type": "VARCHAR(50)"
+                }
+              },
+              {
+                "column": {
+                  "name": "DESCRIPCION",
+                  "type": "VARCHAR(50)"
+                }
+              },
+              {
+                "column": {
+                  "name": "FPUBLICACION",
+                  "type": "date"
+                }
+              },
+              {
+                "column": {
+                  "name": "URL",
+                  "type": "VARCHAR(250)"
+                }
+              }
+            ]
+            ,
+            "tableName": "MATERIALES"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-14",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "autoIncrement": true,
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_A9"
+                  },
+                  "name": "ID_MENSAJE",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_PERSONA",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "EMISOR",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "RECEPTOR",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "CONTENIDO",
+                  "type": "VARCHAR(1000000000)"
+                }
+              },
+              {
+                "column": {
+                  "name": "FECHA",
+                  "type": "date"
+                }
+              }
+            ]
+            ,
+            "tableName": "MENSAJES"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-15",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "autoIncrement": true,
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_34"
+                  },
+                  "name": "ID_MFORO",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_FORO",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_ESTUDIANTE",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "MENSAJE",
+                  "type": "VARCHAR(1000000000)"
+                }
+              },
+              {
+                "column": {
+                  "name": "FECHA_ENVIO",
+                  "type": "date"
+                }
+              }
+            ]
+            ,
+            "tableName": "MENSAJES_DE_FORO"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-16",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_2"
+                  },
+                  "name": "ID_PERSONA",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "NOMBRE",
+                  "type": "VARCHAR(50)"
+                }
+              },
+              {
+                "column": {
+                  "name": "APELLIDO",
+                  "type": "VARCHAR(50)"
+                }
+              },
+              {
+                "column": {
+                  "name": "CURP",
+                  "type": "VARCHAR(18)"
+                }
+              },
+              {
+                "column": {
+                  "name": "FECHA_NACIMIENTO",
+                  "type": "date"
+                }
+              },
+              {
+                "column": {
+                  "name": "EMAIL",
+                  "type": "VARCHAR(50)"
+                }
+              },
+              {
+                "column": {
+                  "name": "CONSTRASEÑA",
+                  "type": "VARCHAR(50)"
+                }
+              }
+            ]
+            ,
+            "tableName": "PERSONA"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-17",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_21"
+                  },
+                  "name": "ID_SOLICITUD",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_LISTAESPERA",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "ID_ESTUDIANTE",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "FECHASOLICITUD",
+                  "type": "date"
+                }
+              },
+              {
+                "column": {
+                  "name": "APROBADA",
+                  "type": "BOOLEAN"
+                }
+              }
+            ]
+            ,
+            "tableName": "SOLICITUDES_INSCRIPCION"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-18",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createTable": {
+            "columns": [
+              {
+                "column": {
+                  "autoIncrement": true,
+                  "constraints": {
+                    "nullable": false,
+                    "primaryKey": true,
+                    "primaryKeyName": "CONSTRAINT_6"
+                  },
+                  "name": "ID_TIPO",
+                  "type": "INT"
+                }
+              },
+              {
+                "column": {
+                  "name": "TIPO",
+                  "type": "VARCHAR(50)"
+                }
+              }
+            ]
+            ,
+            "tableName": "TIPOASIGNACION"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-19",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_CURSO"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_ASIGNACIONES_CURSO_INDEX_8",
+            "tableName": "ASIGNACIONES"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-20",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_TIPO"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_ASIGNACIONES_TIPO_INDEX_8",
+            "tableName": "ASIGNACIONES"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-21",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_CURSO"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_ASISTENCIA_CURSOS_INDEX_7",
+            "tableName": "ASISTENCIA"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-22",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_ESTUDIANTE"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_ASISTENCIA_ESTUDIANTE_INDEX_7",
+            "tableName": "ASISTENCIA"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-23",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_AULA"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_CITAPORSALON_AULA_INDEX_A",
+            "tableName": "CITAPORSALON"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-24",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_CITA"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_CITAPORSALON_CITA_INDEX_A",
+            "tableName": "CITAPORSALON"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-25",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_CURSO"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_CITAPORSALON_CURSO_INDEX_A",
+            "tableName": "CITAPORSALON"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-26",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_INSTRUCTOR"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_CURSOS_INSTRUCTORES_INDEX_7",
+            "tableName": "CURSOS"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-27",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_ASIGNACION"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_ENTREGASASIGNACION_ASIGNACION_INDEX_8",
+            "tableName": "ENTREGASASIGNACION"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-28",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_ESTUDIANTE"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_ENTREGASASIGNACION_ESTUDIANTE_INDEX_8",
+            "tableName": "ENTREGASASIGNACION"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-29",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_PERSONA"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_ESTUDIANTE_PERSONA_INDEX_8",
+            "tableName": "ESTUDIANTE"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-30",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_CURSO"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_FOROS_CURSO_INDEX_3",
+            "tableName": "FOROS"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-31",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_ESTUDIANTE"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_HISTORIALACADEMICO_ESTUDIANTE_INDEX_4",
+            "tableName": "HISTORIALACADEMICO"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-32",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_PERSONA"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_INSTRUCTORES_PERSONA_INDEX_B",
+            "tableName": "INSTRUCTORES"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-33",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_CURSO"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_MATERIALES_CURSOS_INDEX_7",
+            "tableName": "MATERIALES"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-34",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_ESTUDIANTE"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_MENSAJES_DE_FORO_ESTUDIANTE_INDEX_3",
+            "tableName": "MENSAJES_DE_FORO"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-35",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_FORO"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_MENSAJES_DE_FORO_FORO_INDEX_3",
+            "tableName": "MENSAJES_DE_FORO"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-36",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_PERSONA"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_MENSAJES_PERSONA_INDEX_A",
+            "tableName": "MENSAJES"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-37",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "createIndex": {
+            "associatedWith": "",
+            "columns": [
+              {
+                "column": {
+                  "name": "ID_ESTUDIANTE"
+                }
+              }
+            ]
+            ,
+            "indexName": "FK_SOLICITUDES_INSCRIPCION_ESTUDIANTE_INDEX_2",
+            "tableName": "SOLICITUDES_INSCRIPCION"
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-38",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_CURSO",
+            "baseTableName": "ASIGNACIONES",
+            "constraintName": "FK_ASIGNACIONES_CURSO",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_CURSO",
+            "referencedTableName": "CURSOS",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-39",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_TIPO",
+            "baseTableName": "ASIGNACIONES",
+            "constraintName": "FK_ASIGNACIONES_TIPO",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_TIPO",
+            "referencedTableName": "TIPOASIGNACION",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-40",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_CURSO",
+            "baseTableName": "ASISTENCIA",
+            "constraintName": "FK_ASISTENCIA_CURSOS",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_CURSO",
+            "referencedTableName": "CURSOS",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-41",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_ESTUDIANTE",
+            "baseTableName": "ASISTENCIA",
+            "constraintName": "FK_ASISTENCIA_ESTUDIANTE",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_ESTUDIANTE",
+            "referencedTableName": "ESTUDIANTE",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-42",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_AULA",
+            "baseTableName": "CITAPORSALON",
+            "constraintName": "FK_CITAPORSALON_AULA",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_AULA",
+            "referencedTableName": "AULAS",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-43",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_CITA",
+            "baseTableName": "CITAPORSALON",
+            "constraintName": "FK_CITAPORSALON_CITA",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_CITA",
+            "referencedTableName": "CITAS",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-44",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_CURSO",
+            "baseTableName": "CITAPORSALON",
+            "constraintName": "FK_CITAPORSALON_CURSO",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_CURSO",
+            "referencedTableName": "CURSOS",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-45",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_INSTRUCTOR",
+            "baseTableName": "CURSOS",
+            "constraintName": "FK_CURSOS_INSTRUCTORES",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_INSTRUCTOR",
+            "referencedTableName": "INSTRUCTORES",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-46",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_ASIGNACION",
+            "baseTableName": "ENTREGASASIGNACION",
+            "constraintName": "FK_ENTREGASASIGNACION_ASIGNACION",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_ASIGNACION",
+            "referencedTableName": "ASIGNACIONES",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-47",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_ESTUDIANTE",
+            "baseTableName": "ENTREGASASIGNACION",
+            "constraintName": "FK_ENTREGASASIGNACION_ESTUDIANTE",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_ESTUDIANTE",
+            "referencedTableName": "ESTUDIANTE",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-48",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_PERSONA",
+            "baseTableName": "ESTUDIANTE",
+            "constraintName": "FK_ESTUDIANTE_PERSONA",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_PERSONA",
+            "referencedTableName": "PERSONA",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-49",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_CURSO",
+            "baseTableName": "FOROS",
+            "constraintName": "FK_FOROS_CURSO",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_CURSO",
+            "referencedTableName": "CURSOS",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-50",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_ESTUDIANTE",
+            "baseTableName": "HISTORIALACADEMICO",
+            "constraintName": "FK_HISTORIALACADEMICO_ESTUDIANTE",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_ESTUDIANTE",
+            "referencedTableName": "ESTUDIANTE",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-51",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_PERSONA",
+            "baseTableName": "INSTRUCTORES",
+            "constraintName": "FK_INSTRUCTORES_PERSONA",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_PERSONA",
+            "referencedTableName": "PERSONA",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-52",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_CURSO",
+            "baseTableName": "MATERIALES",
+            "constraintName": "FK_MATERIALES_CURSOS",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_CURSO",
+            "referencedTableName": "CURSOS",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-53",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_ESTUDIANTE",
+            "baseTableName": "MENSAJES_DE_FORO",
+            "constraintName": "FK_MENSAJES_DE_FORO_ESTUDIANTE",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_ESTUDIANTE",
+            "referencedTableName": "ESTUDIANTE",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-54",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_FORO",
+            "baseTableName": "MENSAJES_DE_FORO",
+            "constraintName": "FK_MENSAJES_DE_FORO_FORO",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_FORO",
+            "referencedTableName": "FOROS",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-55",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_PERSONA",
+            "baseTableName": "MENSAJES",
+            "constraintName": "FK_MENSAJES_PERSONA",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_PERSONA",
+            "referencedTableName": "PERSONA",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  },
+  
+  {
+    "changeSet": {
+      "id": "1724902434969-56",
+      "author": "marco.mejia (generated)",
+      "changes": [
+        {
+          "addForeignKeyConstraint": {
+            "baseColumnNames": "ID_ESTUDIANTE",
+            "baseTableName": "SOLICITUDES_INSCRIPCION",
+            "constraintName": "FK_SOLICITUDES_INSCRIPCION_ESTUDIANTE",
+            "deferrable": false,
+            "initiallyDeferred": false,
+            "onDelete": "RESTRICT",
+            "onUpdate": "RESTRICT",
+            "referencedColumnNames": "ID_ESTUDIANTE",
+            "referencedTableName": "ESTUDIANTE",
+            "validate": true
+          }
+        }
+      ]
+      
+    }
+  }
+  
+]}

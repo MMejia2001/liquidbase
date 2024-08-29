@@ -1,0 +1,355 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="marco.mejia (generated)" id="1724902419560-1">
+        <createTable tableName="ADMINISTRADORES">
+            <column name="ID_ADMINISTRADOR" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_5"/>
+            </column>
+            <column name="ID_PERSONA" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-2">
+        <createTable tableName="ASIGNACIONES">
+            <column autoIncrement="true" name="ID_ASIGNACION" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_8D"/>
+            </column>
+            <column name="ID_CURSO" type="INT"/>
+            <column name="ID_TIPO" type="INT"/>
+            <column name="TITULO" type="VARCHAR(100)"/>
+            <column name="DESCRIPCION" type="VARCHAR(100)"/>
+            <column name="ARCHIVO" type="VARCHAR(100)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-3">
+        <createTable tableName="ASISTENCIA">
+            <column name="ID_ASISTENCIA" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_7"/>
+            </column>
+            <column name="ID_CURSO" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ID_ESTUDIANTE" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FECHA" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ESTADO" type="TINYINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-4">
+        <createTable tableName="AULAS">
+            <column autoIncrement="true" name="ID_AULA" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_3"/>
+            </column>
+            <column name="NOMBRE" type="VARCHAR(50)"/>
+            <column name="CAPACIDAD" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-5">
+        <createTable tableName="CITAPORSALON">
+            <column name="ID_CITASALON" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_A"/>
+            </column>
+            <column name="ID_CITA" type="INT"/>
+            <column name="ID_AULA" type="INT"/>
+            <column name="ID_CURSO" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-6">
+        <createTable tableName="CITAS">
+            <column name="ID_CITA" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_3D"/>
+            </column>
+            <column name="DÍA" type="date"/>
+            <column name="HORA_INICIO" type="time"/>
+            <column name="HORA_FIN" type="time"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-7">
+        <createTable tableName="CURSOS">
+            <column autoIncrement="true" name="ID_CURSO" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_77"/>
+            </column>
+            <column name="NOMBRE" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ID_INSTRUCTOR" type="INT"/>
+            <column name="DESCRIPCION" type="VARCHAR(50)"/>
+            <column name="ESTADO" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-8">
+        <createTable tableName="ENTREGASASIGNACION">
+            <column autoIncrement="true" name="ID_ENTREGA" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_89"/>
+            </column>
+            <column name="ID_ASIGNACION" type="INT"/>
+            <column name="ID_ESTUDIANTE" type="INT"/>
+            <column name="CALIFICACION" type="INT"/>
+            <column name="ESTADO" type="VARCHAR(50)"/>
+            <column name="RETROALIMENTACION" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-9">
+        <createTable tableName="ESTUDIANTE">
+            <column name="ID_ESTUDIANTE" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_8"/>
+            </column>
+            <column name="ID_PERSONA" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-10">
+        <createTable tableName="FOROS">
+            <column autoIncrement="true" name="ID_FORO" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_3F"/>
+            </column>
+            <column name="TEMA" type="VARCHAR(50)"/>
+            <column name="DESCRIPCION" type="VARCHAR(1000000000)"/>
+            <column name="FECHA_CREACION" type="date"/>
+            <column name="ID_CURSO" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-11">
+        <createTable tableName="HISTORIALACADEMICO">
+            <column name="ID_HACADEMICO" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_4"/>
+            </column>
+            <column name="ID_ESTUDIANTE" type="INT"/>
+            <column name="PROMEDIO_GRAL" type="INT"/>
+            <column name="RASISTENCIA" type="VARCHAR(1000000000)"/>
+            <column name="RETROALIMENTACION" type="VARCHAR(1000000000)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-12">
+        <createTable tableName="INSTRUCTORES">
+            <column name="ID_INSTRUCTOR" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_B"/>
+            </column>
+            <column name="ID_PERSONA" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-13">
+        <createTable tableName="MATERIALES">
+            <column autoIncrement="true" name="ID_MATERIAL" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_778"/>
+            </column>
+            <column name="ID_CURSO" type="INT"/>
+            <column name="NOMBRE" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPCION" type="VARCHAR(50)"/>
+            <column name="FPUBLICACION" type="date"/>
+            <column name="URL" type="VARCHAR(250)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-14">
+        <createTable tableName="MENSAJES">
+            <column autoIncrement="true" name="ID_MENSAJE" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_A9"/>
+            </column>
+            <column name="ID_PERSONA" type="INT"/>
+            <column name="EMISOR" type="INT"/>
+            <column name="RECEPTOR" type="INT"/>
+            <column name="CONTENIDO" type="VARCHAR(1000000000)"/>
+            <column name="FECHA" type="date"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-15">
+        <createTable tableName="MENSAJES_DE_FORO">
+            <column autoIncrement="true" name="ID_MFORO" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_34"/>
+            </column>
+            <column name="ID_FORO" type="INT"/>
+            <column name="ID_ESTUDIANTE" type="INT"/>
+            <column name="MENSAJE" type="VARCHAR(1000000000)"/>
+            <column name="FECHA_ENVIO" type="date"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-16">
+        <createTable tableName="PERSONA">
+            <column name="ID_PERSONA" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_2"/>
+            </column>
+            <column name="NOMBRE" type="VARCHAR(50)"/>
+            <column name="APELLIDO" type="VARCHAR(50)"/>
+            <column name="CURP" type="VARCHAR(18)"/>
+            <column name="FECHA_NACIMIENTO" type="date"/>
+            <column name="EMAIL" type="VARCHAR(50)"/>
+            <column name="CONSTRASEÑA" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-17">
+        <createTable tableName="SOLICITUDES_INSCRIPCION">
+            <column name="ID_SOLICITUD" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_21"/>
+            </column>
+            <column name="ID_LISTAESPERA" type="INT"/>
+            <column name="ID_ESTUDIANTE" type="INT"/>
+            <column name="FECHASOLICITUD" type="date"/>
+            <column name="APROBADA" type="BOOLEAN"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-18">
+        <createTable tableName="TIPOASIGNACION">
+            <column autoIncrement="true" name="ID_TIPO" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="CONSTRAINT_6"/>
+            </column>
+            <column name="TIPO" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-19">
+        <createIndex associatedWith="" indexName="FK_ASIGNACIONES_CURSO_INDEX_8" tableName="ASIGNACIONES">
+            <column name="ID_CURSO"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-20">
+        <createIndex associatedWith="" indexName="FK_ASIGNACIONES_TIPO_INDEX_8" tableName="ASIGNACIONES">
+            <column name="ID_TIPO"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-21">
+        <createIndex associatedWith="" indexName="FK_ASISTENCIA_CURSOS_INDEX_7" tableName="ASISTENCIA">
+            <column name="ID_CURSO"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-22">
+        <createIndex associatedWith="" indexName="FK_ASISTENCIA_ESTUDIANTE_INDEX_7" tableName="ASISTENCIA">
+            <column name="ID_ESTUDIANTE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-23">
+        <createIndex associatedWith="" indexName="FK_CITAPORSALON_AULA_INDEX_A" tableName="CITAPORSALON">
+            <column name="ID_AULA"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-24">
+        <createIndex associatedWith="" indexName="FK_CITAPORSALON_CITA_INDEX_A" tableName="CITAPORSALON">
+            <column name="ID_CITA"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-25">
+        <createIndex associatedWith="" indexName="FK_CITAPORSALON_CURSO_INDEX_A" tableName="CITAPORSALON">
+            <column name="ID_CURSO"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-26">
+        <createIndex associatedWith="" indexName="FK_CURSOS_INSTRUCTORES_INDEX_7" tableName="CURSOS">
+            <column name="ID_INSTRUCTOR"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-27">
+        <createIndex associatedWith="" indexName="FK_ENTREGASASIGNACION_ASIGNACION_INDEX_8" tableName="ENTREGASASIGNACION">
+            <column name="ID_ASIGNACION"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-28">
+        <createIndex associatedWith="" indexName="FK_ENTREGASASIGNACION_ESTUDIANTE_INDEX_8" tableName="ENTREGASASIGNACION">
+            <column name="ID_ESTUDIANTE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-29">
+        <createIndex associatedWith="" indexName="FK_ESTUDIANTE_PERSONA_INDEX_8" tableName="ESTUDIANTE">
+            <column name="ID_PERSONA"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-30">
+        <createIndex associatedWith="" indexName="FK_FOROS_CURSO_INDEX_3" tableName="FOROS">
+            <column name="ID_CURSO"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-31">
+        <createIndex associatedWith="" indexName="FK_HISTORIALACADEMICO_ESTUDIANTE_INDEX_4" tableName="HISTORIALACADEMICO">
+            <column name="ID_ESTUDIANTE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-32">
+        <createIndex associatedWith="" indexName="FK_INSTRUCTORES_PERSONA_INDEX_B" tableName="INSTRUCTORES">
+            <column name="ID_PERSONA"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-33">
+        <createIndex associatedWith="" indexName="FK_MATERIALES_CURSOS_INDEX_7" tableName="MATERIALES">
+            <column name="ID_CURSO"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-34">
+        <createIndex associatedWith="" indexName="FK_MENSAJES_DE_FORO_ESTUDIANTE_INDEX_3" tableName="MENSAJES_DE_FORO">
+            <column name="ID_ESTUDIANTE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-35">
+        <createIndex associatedWith="" indexName="FK_MENSAJES_DE_FORO_FORO_INDEX_3" tableName="MENSAJES_DE_FORO">
+            <column name="ID_FORO"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-36">
+        <createIndex associatedWith="" indexName="FK_MENSAJES_PERSONA_INDEX_A" tableName="MENSAJES">
+            <column name="ID_PERSONA"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-37">
+        <createIndex associatedWith="" indexName="FK_SOLICITUDES_INSCRIPCION_ESTUDIANTE_INDEX_2" tableName="SOLICITUDES_INSCRIPCION">
+            <column name="ID_ESTUDIANTE"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-38">
+        <addForeignKeyConstraint baseColumnNames="ID_CURSO" baseTableName="ASIGNACIONES" constraintName="FK_ASIGNACIONES_CURSO" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_CURSO" referencedTableName="CURSOS" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-39">
+        <addForeignKeyConstraint baseColumnNames="ID_TIPO" baseTableName="ASIGNACIONES" constraintName="FK_ASIGNACIONES_TIPO" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_TIPO" referencedTableName="TIPOASIGNACION" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-40">
+        <addForeignKeyConstraint baseColumnNames="ID_CURSO" baseTableName="ASISTENCIA" constraintName="FK_ASISTENCIA_CURSOS" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_CURSO" referencedTableName="CURSOS" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-41">
+        <addForeignKeyConstraint baseColumnNames="ID_ESTUDIANTE" baseTableName="ASISTENCIA" constraintName="FK_ASISTENCIA_ESTUDIANTE" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_ESTUDIANTE" referencedTableName="ESTUDIANTE" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-42">
+        <addForeignKeyConstraint baseColumnNames="ID_AULA" baseTableName="CITAPORSALON" constraintName="FK_CITAPORSALON_AULA" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_AULA" referencedTableName="AULAS" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-43">
+        <addForeignKeyConstraint baseColumnNames="ID_CITA" baseTableName="CITAPORSALON" constraintName="FK_CITAPORSALON_CITA" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_CITA" referencedTableName="CITAS" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-44">
+        <addForeignKeyConstraint baseColumnNames="ID_CURSO" baseTableName="CITAPORSALON" constraintName="FK_CITAPORSALON_CURSO" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_CURSO" referencedTableName="CURSOS" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-45">
+        <addForeignKeyConstraint baseColumnNames="ID_INSTRUCTOR" baseTableName="CURSOS" constraintName="FK_CURSOS_INSTRUCTORES" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_INSTRUCTOR" referencedTableName="INSTRUCTORES" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-46">
+        <addForeignKeyConstraint baseColumnNames="ID_ASIGNACION" baseTableName="ENTREGASASIGNACION" constraintName="FK_ENTREGASASIGNACION_ASIGNACION" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_ASIGNACION" referencedTableName="ASIGNACIONES" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-47">
+        <addForeignKeyConstraint baseColumnNames="ID_ESTUDIANTE" baseTableName="ENTREGASASIGNACION" constraintName="FK_ENTREGASASIGNACION_ESTUDIANTE" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_ESTUDIANTE" referencedTableName="ESTUDIANTE" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-48">
+        <addForeignKeyConstraint baseColumnNames="ID_PERSONA" baseTableName="ESTUDIANTE" constraintName="FK_ESTUDIANTE_PERSONA" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_PERSONA" referencedTableName="PERSONA" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-49">
+        <addForeignKeyConstraint baseColumnNames="ID_CURSO" baseTableName="FOROS" constraintName="FK_FOROS_CURSO" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_CURSO" referencedTableName="CURSOS" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-50">
+        <addForeignKeyConstraint baseColumnNames="ID_ESTUDIANTE" baseTableName="HISTORIALACADEMICO" constraintName="FK_HISTORIALACADEMICO_ESTUDIANTE" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_ESTUDIANTE" referencedTableName="ESTUDIANTE" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-51">
+        <addForeignKeyConstraint baseColumnNames="ID_PERSONA" baseTableName="INSTRUCTORES" constraintName="FK_INSTRUCTORES_PERSONA" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_PERSONA" referencedTableName="PERSONA" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-52">
+        <addForeignKeyConstraint baseColumnNames="ID_CURSO" baseTableName="MATERIALES" constraintName="FK_MATERIALES_CURSOS" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_CURSO" referencedTableName="CURSOS" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-53">
+        <addForeignKeyConstraint baseColumnNames="ID_ESTUDIANTE" baseTableName="MENSAJES_DE_FORO" constraintName="FK_MENSAJES_DE_FORO_ESTUDIANTE" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_ESTUDIANTE" referencedTableName="ESTUDIANTE" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-54">
+        <addForeignKeyConstraint baseColumnNames="ID_FORO" baseTableName="MENSAJES_DE_FORO" constraintName="FK_MENSAJES_DE_FORO_FORO" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_FORO" referencedTableName="FOROS" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-55">
+        <addForeignKeyConstraint baseColumnNames="ID_PERSONA" baseTableName="MENSAJES" constraintName="FK_MENSAJES_PERSONA" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_PERSONA" referencedTableName="PERSONA" validate="true"/>
+    </changeSet>
+    <changeSet author="marco.mejia (generated)" id="1724902419560-56">
+        <addForeignKeyConstraint baseColumnNames="ID_ESTUDIANTE" baseTableName="SOLICITUDES_INSCRIPCION" constraintName="FK_SOLICITUDES_INSCRIPCION_ESTUDIANTE" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID_ESTUDIANTE" referencedTableName="ESTUDIANTE" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
